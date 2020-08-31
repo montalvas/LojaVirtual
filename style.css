@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-size: 4rem;
+    color: #FFC905;
+    font-weight: 400;
+    background: black;
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#produtos{
+    width: 100%;
+    margin: 5rem auto;
+    padding: 2rem;
+    display: flex;
+    flex-flow: row;
+    column-gap: 2rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.produto-single{
+    background: white;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    row-gap: 1rem;
+    border: 2px solid rgba(204, 204, 204, 0.315);
+}
+
+.produto-single h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.produto-single p{
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.produto-single a{
+    width: 10rem;
+    background: #0BF446;
+    padding: 0.8rem 2rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+}
+
+#carrinho{
+    width: 100%;
+    margin: 0 auto;
+    background: white;
+    text-align: center;
+}
+
+#carrinho h2{
+    font-size: 3rem;
+    font-weight: 400;
+    color: #FFC905;
+    background: black;
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+#carrinho p{
+    font-size: 1.3rem;
+    display: inline-block;
+    width: 49%;
+}

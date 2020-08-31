@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Vitrine</h1>
+
+    <div id="produtos">
+        
+    </div><!--produtos-->
+
+    <div id="carrinho">
+        <h2>Carrinho</h2>
+        <div class="cesta">
+
+        </div>
+    </div><!--carrinho-->
+
+    <script async>
+        const items = [
+            {
+                id: 0,
+                nome: 'camisa',
+                img: 'img/camisa.jpg',
+                preco: 50,
+                quantidade: 0
+            },
+
+            {
+                id: 1,
+                nome: 'jeans',
+                img: 'img/jeans.jpg',
+                preco: 90,
+                quantidade: 0
+            },
+
+            {
+                id: 2,
+                nome: 'sapato',
+                img: 'img/sapato.jpg',
+                preco: 160,
+                quantidade: 0
+            }
+        ];
+
+        inicializarLoja = () => {
+            let produtos = document.querySelector('#produtos');
+            items.forEach(item => {
+                produtos.innerHTML += `
+                <div class="produto-single">
+                    <img src="${item.img}" alt="camisa">
+                    <h3>${item.nome}</h3>
+                    <p>R$ ${item.preco.toFixed(2).replace('.', ',')}</p>
+                    <a key="${item.id}" href="#carrinho" class="compra">Comprar</a>
+                <div><!--produto-single-->
+                `;
+            });
+        }
+
+        inicializarLoja();
+
+        atualizarCarrinho = () => {
+            let cesta = document.querySelector('.cesta');
+            cesta.innerHTML = '';
+            items.forEach(item => {
+                if(item.quantidade > 0) {
+                    cesta.innerHTML += `
+                        <p>${item.nome}</p>
+                        <p>Quantidade: ${item.quantidade}</p>
+                        <hr>
+                    `;
+                };
+                
+            });
+        }
+
+        let links = document.querySelectorAll('.compra');
+
+        for(i = 0; i < links.length; i++) {
+            links[i].addEventListener('click', function() {
+                let key = this.getAttribute('key');
+                items[key].quantidade++;
+                atualizarCarrinho();
+                return false;
+            });
+        };
+        
+    </script>
+</body>
+</html>
